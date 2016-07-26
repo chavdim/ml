@@ -16,7 +16,7 @@ import random
 #parameters
 numParameters = 4
 numClasses = 3
-trainIterations = 1000
+trainIterations = 500
 splitRatio = 0.2
 random.seed(1)
 ################################################################
@@ -97,7 +97,7 @@ b = tf.Variable(tf.zeros([numClasses]))
 ymodel = tf.nn.softmax(tf.matmul(x, W) + b)
 #
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y * tf.log(ymodel), reduction_indices=[1]))
-train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
+train_step = tf.train.GradientDescentOptimizer(0.01).minimize(cross_entropy)
 
 ################################################################
 #run session

@@ -35,7 +35,7 @@ regressor = skflow.TensorFlowDNNRegressor(
 	n_classes=3,
     hidden_units=[5],  
     batch_size=128, 
-    steps=2000, 
+    steps=1, 
     learning_rate=0.1)
 
 regressor.fit(X_train, y_train)
